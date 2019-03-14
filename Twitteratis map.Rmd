@@ -1,0 +1,24 @@
+---
+title: "I535-Project A"
+author: "Ankit Mathur"
+date: "3/13/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy=TRUE)
+library(ggmap)
+```
+
+```{r}
+user_data <- read.csv("output.csv")
+```
+
+```{r}
+colnames(user_data) = c("X_id", "user_id", "user_name", "friend_count", "follower_count", "status_count", "user_location", "lat", "lng")
+```
+
+```{r}
+map <- get_map(location = 'United States', zoom = 4)
+```
+
